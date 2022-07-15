@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-rain</title>
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+
+  <!-- JS & JQuery Libraries -->
+  <script src="../includes/js/jquery-ui-1.12.1.custom/all.min.js"></script>
+  <script src="../includes/js/jquery-ui-1.12.1.custom/jquery.js"></script>
+  <script src="../includes/js/jquery-ui-1.12.1.custom/typed.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../includes/css/style.css">
+</head>
+
+<body onload="showTab(currentTab);">
+  <nav class="nav flex items-center">
+    <div class="logo px-20">
+      <a href="../index.html" class="flex flex-center">
+        <img src="../img/favicon.ico" alt="train logo" width="45">
+        <h1>T-rain</h1>
+      </a>
+    </div>
+    <div class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="TripsList.html">Schedule</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="About.html">About Us</a></li>
+      </ul>
+    </div>
+    <div class="account flex items-center">
+      <a href="#">
+        <img src="../img/clipart3643767.png" alt="" width="50">
+      </a>
+      <div class="dropdown ml-10">
+        <a class="dropbtn flex items-center">username<i class="fas fa-sort-down ml-5"></i></a>
+        <div class="dropdown-content">
+          <a href="Account.html">My Account</a>
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <a href="../index.html">Home</a>
+      <a href="TripsList.html">Schedule</a>
+      <a href="#contact">Contact Us</a>
+      <a href="About.html">About Us</a>
+      <a href="Account.html">My Account</a>
+      <a href="#">Log out</a>
+    </div>
+    <a href="javascript: void(0)" class="burger-nav-ico">
+      <i class="fa fa-bars fa-2x"></i>
+    </a>
+  </nav>
+  <div class="nav-place after-nav"></div>
+  <div class="nav-overlay"></div>
+
+  <div class="page-body">
+    <form id="regForm">
+      <h1>Register</h1>
+      <hr>
+
+      <div class="tab">Personal Info
+        <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+        <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+        <p><input placeholder="Address" oninput="this.className = ''" name="address"></p>
+        <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+      </div>
+      <div class="tab">Account Info
+        <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+        <p><input placeholder="Password..." oninput="this.className = ''" name="pass"></p>
+        <p><input placeholder="Repeat Password" oninput="this.className = ''" name="repeat-pass"></p>
+      </div>
+      <div class="tab">Date of birth
+        <p><input type="date" oninput="this.className = ''" name="dd"></p>
+      </div>
+      <div class="tab">Payment Info
+        <p><input placeholder="Card number" oninput="this.className = ''" name="uname"></p>
+        <p><input placeholder="Card password" oninput="this.className = ''" name="pword" type="password"></p>
+        <label for="cars">Related Bank</label>
+        <select name="cars" oninput="this.className = ''" name="uname">
+          <option value="Masr">Masr</option>
+          <option value="CIB">CIB</option>
+          <option value="HSBC">HSBC</option>
+          <option value="Al-ahly">Al-ahly</option>
+        </select>
+
+      </div>
+      <div style="overflow:auto;">
+        <div style="float:right;">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)"><span>Next</span></button>
+        </div>
+      </div>
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer">
+    <div class="footer-section">
+      <h2>Our Services</h2>
+      <a href="TripsList.html">Book a Ticket</a>
+      <a href="Account.html">My Bookings</a>
+      <a href="About.html">Our Policy</a>
+      <a href="About.html">About Us</a>
+    </div>
+    <div class="footer-section">
+      <h2 id="contact">Contact Us</h2>
+      <p>T.rain@email.com</p>
+      <p>+20 109 776 7657</p>
+      <div class="media">
+        <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+        <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+        <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">&copy Copyright 2021 | ❤️ BUE IP Project | Group 29</div>
+
+  <!-- JS  -->
+  <script type="text/javascript" src="../includes/js/script-zeyad.js"></script> <!-- For NavBar -->
+  <script type="text/javascript" src="../includes/js/script-yousef-ali.js"></script>
+
+</body>
+
+
+</html>

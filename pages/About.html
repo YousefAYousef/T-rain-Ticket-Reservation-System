@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-rain</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+
+    <!-- JS & JQuery Libraries -->
+    <script src="../includes/js/jquery-ui-1.12.1.custom/all.min.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/jquery.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/typed.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../includes/css/style.css">
+</head>
+
+<body onload="showSlides()">
+    <nav class="nav flex items-center">
+        <div class="logo px-20">
+            <a href="../index.html" class="flex flex-center">
+                <img src="../img/favicon.ico" alt="train logo" width="45">
+                <h1>T-rain</h1>
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="TripsList.html">Schedule</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="About.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="account flex items-center">
+            <a href="#">
+                <img src="../img/clipart3643767.png" alt="" width="50">
+            </a>
+            <div class="dropdown ml-10">
+                <a class="dropbtn flex items-center">username<i class="fas fa-sort-down ml-5"></i></a>
+                <div class="dropdown-content">
+                    <a href="Account.html">My Account</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="TripsList.html">Schedule</a>
+            <a href="#contact">Contact Us</a>
+            <a href="About.html">About Us</a>
+            <a href="Account.html">My Account</a>
+            <a href="#">Log out</a>
+        </div>
+        <a href="javascript: void(0)" class="burger-nav-ico">
+            <i class="fa fa-bars fa-2x"></i>
+        </a>
+    </nav>
+    <div class="nav-place after-nav"></div>
+    <div class="nav-overlay"></div>
+
+    <div class="page-body">
+        <div>
+            <div class="title">
+                <h2>About us<h2>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="column">
+                    <div class="centered">
+                        <h3> History</h3>
+                    </div>
+                    <br>
+                    <img src="../img/history.jpg" alt="History">
+                    <p>This company start at 1998, when the company owner try to start his own bussenis and after very
+                        long search
+                        and asking excperts he take his desicion and start T-rain company with some of popular bussenis
+                        men and other
+                        Investment companies, in 2001 the first trip of T-rain company was from cairo to Aswan and it
+                        was covered by
+                        the media which make ads for the company and make it popular</p>
+                </div>
+
+                <div class="column">
+                    <div class="centerd2">
+                        <h3> Mission</h3>
+                    </div>
+                    <br>
+                    <img src="../img/mission.jpg" alt="Mission">
+                    <p>Our mission in T-rain is to make the customer feel safe and comfortable during the trip, After
+                        Covid-19
+                        spread in the country we were the
+                        first company in egypt stick to the Precautionary measures by the world health organization
+                        inside the comapny
+                        and between our lovely passengers to keep
+                        them safe and healthy which means that the first one in our company is the customer and
+                        passenger</p>
+                </div>
+
+                <div class="column">
+                    <div class="centerd3">
+                        <h3> Goals</h3>
+                    </div>
+                    <br>
+                    <img src="../img/goal.jpg" alt="goals">
+                    <p> Our goal in T-rain in 2021 is to reach to 600 worker and 80000+ customer who trust us and prefer
+                        this
+                        company to reserve trips on it all over
+                        egyot from nourth to south and from east to west</p>
+                    <p> Our Second goal is by 2030, to reach over 2000+ worker in all the company from the manger to the
+                        clean
+                        workers and to reach to 100000 passenger
+                        all over Egypt and 80000 subscriber with our trips offers </p>
+                </div>
+
+            </div>
+            <hr>
+
+            <div class="title">
+                <h2>Our Strengths<h2>
+            </div>
+            <div class="column" style="align-items: flex-start;">
+                <div class="row">
+                    <span class="icon_sqr"></span>
+                    <h4>One of the leading online travel agencies in India with a customer focused approach</h4>
+                </div>
+                <div class="row">
+                    <span class="icon_sqr"></span>
+                    <h4> In-house advanced technology and analytics capabilities</h4>
+                </div>
+                <div class="row">
+                    <span class="icon_sqr"></span>
+                    <h4> Wide distribution network supported by a hybrid platform</h4>
+                </div>
+                <div class="row">
+                    <span class="icon_sqr"></span>
+                    <h4> Consistent track record of financial and operational performance with lean and cost
+                        efficient
+                        operations</h4>
+                </div>
+            </div>
+            <hr>
+
+            <section class="counters">
+                <div class="container">
+                    <div>
+
+                        <div class="counter" data-target="200000">0</div>
+                        <h3>Passenger</h3>
+                    </div>
+                    <div>
+
+                        <div class="counter" data-target="60">0</div>
+                        <h3>Train</h3>
+                    </div>
+                    <div>
+
+                        <div class="counter" data-target="600">0</div>
+                        <h3>Workers</h3>
+                    </div>
+                    <div style="position: relative;">
+
+                        <div class="counter" data-target="7000">0</div>
+                        <span style="    position: absolute;
+                bottom: 70px;
+                right: 46px;
+                font-size: 31px;">+</span>
+                        <h3>Trip</h3>
+                    </div>
+                </div>
+            </section>
+
+            <div class="title">
+                <h2>Life at T-rains<h2>
+            </div>
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="../img/groupwork.jpg">
+                    <div class="text">Work hard</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="../img/trips.jpg">
+                    <div class="text">Group trips</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="../img/people.jpg">
+                    <div class="text">Employee birthday</div>
+                </div>
+
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <hr>
+
+            <div class="title">
+                <h2>Company Board<h2>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="../img/img_avatar.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>Yousef Ali</b></h4>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="../img/img_avatar.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>Yousef mohamed</b></h4>
+                            <p>General Manger</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="../img/img_avatar.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>Yousef Adel</b></h4>
+                            <p>CFO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <img src="../img/img_avatar.png" alt="Avatar" style="width:100%">
+                        <div class="container">
+                            <h4><b>Ziad ibraheem</b></h4>
+                            <p>President</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-section">
+            <h2>Our Services</h2>
+            <a href="TripsList.html">Book a Ticket</a>
+            <a href="Account.html">My Bookings</a>
+            <a href="About.html">Our Policy</a>
+            <a href="About.html">About Us</a>
+        </div>
+        <div class="footer-section">
+            <h2 id="contact">Contact Us</h2>
+            <p>T.rain@email.com</p>
+            <p>+20 109 776 7657</p>
+            <div class="media">
+                <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">&copy Copyright 2021 | ❤️ BUE IP Project | Group 29</div>
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../includes/js/script-zeyad.js"></script> <!-- For NavBar -->
+    <script type="text/javascript" src="../includes/js/script-yousef-ali.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-rain</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+
+    <!-- JS & JQuery Libraries -->
+    <link rel="stylesheet" href="../includes/js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../includes/js/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/all.min.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/jquery.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/typed.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../includes/css/style.css">
+</head>
+
+<body onload="updateTotal()">
+    <nav class="nav flex items-center">
+        <div class="logo px-20">
+            <a href="../index.html" class="flex flex-center">
+                <img src="../img/favicon.ico" alt="train logo" width="45">
+                <h1>T-rain</h1>
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="TripsList.html">Schedule</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="About.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="account flex items-center">
+            <a href="#">
+                <img src="../img/clipart3643767.png" alt="" width="50">
+            </a>
+            <div class="dropdown ml-10">
+                <a class="dropbtn flex items-center">username<i class="fas fa-sort-down ml-5"></i></a>
+                <div class="dropdown-content">
+                    <a href="Account.html">My Account</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="TripsList.html">Schedule</a>
+            <a href="#contact">Contact Us</a>
+            <a href="About.html">About Us</a>
+            <a href="Account.html">My Account</a>
+            <a href="#">Log out</a>
+        </div>
+        <a href="javascript: void(0)" class="burger-nav-ico">
+            <i class="fa fa-bars fa-2x"></i>
+        </a>
+    </nav>
+    <div class="nav-place after-nav"></div>
+    <div class="nav-overlay"></div>
+
+    <div class="page-body">
+        <div class="main">
+            <div class="card-v" style="min-height: 20rem;">
+                <div class="title">Trip Details</div>
+                <div>
+                    <div>
+                        <p class="label">Trip Number: &nbsp</p>
+                        <p class="trip-no">1002</p>
+                    </div>
+                    <div>
+                        <p class="label">Train Number: &nbsp</p>
+                        <p class="train-no">143</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p class="label">From: &nbsp</p>
+                        <p class="station">Cairo Station</p>
+                    </div>
+                    <div>
+                        <p class="label">Date: &nbsp</p>
+                        <p class="date">15/5/2021</p>
+                    </div>
+                    <div>
+                        <p class="label">Time: &nbsp</p>
+                        <p class="time">1:30</p>
+                    </div>
+
+                </div>
+                <div>
+                    <div>
+                        <p class="label">To: &nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p class="station">Alex Station</p>
+                    </div>
+                    <div>
+                        <p class="label">Date: &nbsp</p>
+                        <p class="date">15/5/2021</p>
+                    </div>
+                    <div>
+                        <p class="label">Time: &nbsp</p>
+                        <p class="time">2:45</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p class="label">Class: &nbsp</p>
+                        <p class="class">Economy</p>
+                    </div>
+                    <div>
+                        <p class="label">Passengers: &nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <fieldset class="inc-dec">
+                            <input type="button" value="-" class="decrease" />
+                            <input type="text" class="limit" value="1" disabled />
+                            <input type="button" value="+" class="increase" />
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <form class="card-v" style="min-height: 20rem;">
+                <div class="title">Contact Information</div>
+                <div>
+                    <p class="label">Email: &nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    <input type="text" tabindex="1" name="email" required>
+                </div>
+                <div>
+                    <p class="label">Phone: &nbsp&nbsp&nbsp&nbsp</p>
+                    <input type="text" tabindex="2" name="phone" maxlength="11" required>
+                </div>
+                <div>
+                    <p class="label">Address: &nbsp</p>
+                    <input type="text" tabindex="3" name="text">
+                </div>
+                <div>
+                    <a class="login-skip" href="Log_in.html">Login in to skip</a>
+                </div>
+            </form>
+            <form class="card-v" style="min-height: 24rem;">
+                <div class="title">Payment Method</div>
+                <div>
+                    <p class="label">Card Number: &nbsp&nbsp</p>
+                    <input type="text" placeholder="1111-1111-1111-1111" maxlength="12" minlength="12" name="visa-num"
+                        required>
+                </div>
+                <div>
+                    <p class="label">Exp Date: &nbsp</p>
+                    <input type="text" placeholder="05" maxlength="2" style="width: 3rem;" name="month" required>
+                    <input type="text" placeholder="2021" maxlength="4" style="width: 5rem;" name="year" required>
+                </div>
+                <div>
+                    <p class="label">CVV No.: &nbsp&nbsp</p>
+                    <input type="text" placeholder="111" maxlength="3" style="width: 3rem;" name="number" required>
+                </div>
+                <div>
+                    <a class="login-skip" href="Log_in.html">Login in to skip</a>
+                </div>
+            </form>
+            <div class="card-v" style="min-height: 8rem;">
+                <div class="title">Have a coupon?</div>
+                <div>
+                    <input type="text" placeholder="Enter Coupon Code" maxlength="12" name="discount">
+                    <a href="#" class="button" onclick="updateTotal()">Apply</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="side-container">
+                <h2>Price Summary</h2>
+                <div class="card-v price-summary">
+                    <div>
+                        <p class="label">Single Passenger Fare:</p>
+                        <p class="price">25 EGP</p>
+                    </div>
+                    <div>
+                        <p class="label">Passenegers No.:</p>
+                        <p class="passenger-num">1</p>
+                    </div>
+                    <div>
+                        <p class="label">Discount: </p>
+                        <p class="discount">5 EGP</p>
+                    </div>
+                    <div class="total">
+                        <p class="label">Total: </p>
+                        <p>0 EGP</p>
+                    </div>
+                    <div>
+                        <a href="TripsList.html" class="button buy" onclick="vaildateBookingForm()">Confirm Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-section">
+            <h2>Our Services</h2>
+            <a href="TripsList.html">Book a Ticket</a>
+            <a href="Account.html">My Bookings</a>
+            <a href="About.html">Our Policy</a>
+            <a href="About.html">About Us</a>
+        </div>
+        <div class="footer-section">
+            <h2 id="contact">Contact Us</h2>
+            <p>T.rain@email.com</p>
+            <p>+20 109 776 7657</p>
+            <div class="media">
+                <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">&copy Copyright 2021 | ❤️ BUE IP Project | Group 29</div>
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../includes/js/script-zeyad.js"></script> <!-- For NavBar -->
+    <script type="text/javascript" src="../includes/js/script-yousef-mohamed.js"></script>
+
+</body>
+
+</html>

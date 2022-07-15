@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-rain</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+
+    <!-- JS & JQuery Libraries -->
+    <link rel="stylesheet" href="../includes/js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="../includes/js/jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../includes/css/style.css">
+</head>
+
+<body>
+    <nav class="nav flex items-center">
+        <div class="logo px-20">
+            <a href="../index.html" class="flex flex-center">
+                <img src="../img/favicon.ico" alt="train logo" width="45">
+                <h1>T-rain</h1>
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="TripsList.html">Schedule</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="About.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="account flex items-center">
+            <a href="#">
+                <img src="../img/clipart3643767.png" alt="" width="50">
+            </a>
+            <div class="dropdown ml-10">
+                <a class="dropbtn flex items-center">username<i class="fas fa-sort-down ml-5"></i></a>
+                <div class="dropdown-content">
+                    <a href="Account.html">My Account</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="TripsList.html">Schedule</a>
+            <a href="#contact">Contact Us</a>
+            <a href="About.html">About Us</a>
+            <a href="Account.html">My Account</a>
+            <a href="#">Log out</a>
+        </div>
+        <a href="javascript: void(0)" class="burger-nav-ico">
+            <i class="fa fa-bars fa-2x"></i>
+        </a>
+    </nav>
+    <div class="nav-place after-nav"></div>
+    <div class="nav-overlay"></div>
+
+    <header class="header header-mini">
+        <div class="landing container flex flex-center text-center">
+            <div class="search">
+                <form action="" method="post" class="search-form">
+                    <div class="search-form-container flex flex-center">
+                        <div class="input"><input type="text" id="from" placeholder="From" required>
+                            <div class="swap"></div>
+                        </div>
+                        <div class="input"><input type="text" id="to" placeholder="To" required></div>
+                        <div class="input"><input type="date" placeholder="Depart Date" required></div>
+                        <div class="input btn"><button class="search-btn" type="submit"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                        <div class="input"><input class="search-btn" type="submit" value="Search Train">
+                            <a href="javascript: void(0)" id="s-btn"><i class="fas fa-search search-ico"></i></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-body">
+        <div class="sidebar">
+            <div class="side-container">
+                <h2>Filter By</h2>
+                <div class="side-section">
+                    <p class="filter-type">Departure Time</p>
+                    <span id="rangeval-1">00:00 - 23:00</span>
+                    <div id="rangeslider-1"></div>
+                    <script>
+                        $('#rangeslider-1').slider({
+                            range: true,
+                            min: 0,
+                            max: 23,
+                            values: [0, 23],
+                            slide: function (event, ui) {
+                                $('#rangeval-1').html(ui.values[0] + ":00" + " - " + ui.values[1] + ":00");
+                            },
+                        });
+                    </script>
+                </div>
+                <div class="side-section">
+                    <p class="filter-type">Arrive Time &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <span id="rangeval-2">00:00 - 23:00</span>
+                    <div id="rangeslider-2"></div>
+                    <script>
+                        $('#rangeslider-2').slider({
+                            range: true,
+                            min: 0,
+                            max: 23,
+                            values: [0, 23],
+                            slide: function (event, ui) {
+                                $('#rangeval-2').html(ui.values[0] + ":00" + " - " + ui.values[1] + ":00");
+                            },
+                        });
+                    </script>
+                </div>
+                <div class="side-section">
+                    <p class="filter-type">Class Type</p>
+                    <label>
+                        <input type="checkbox" checked> Economy
+                    </label>
+                    <label>
+                        <input type="checkbox" checked> First Class
+                    </label>
+                    <label>
+                        <input type="checkbox" checked> Sleeper Class
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="trip-card" onmouseenter="TripCardAnimation(1)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(2)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(3)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(4)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(5)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(6)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(7)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(8)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(9)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+            <div class="trip-card" onmouseenter="TripCardAnimation(10)">
+                <div class="info" style="flex-grow: 1;">
+                    <p>Train Number</p>
+                    <p class="train-no">143</p>
+                    <p class="class">Economy</p>
+                </div>
+                <div class="dept" style="flex-grow: 2;">
+                    <p class="station">Cairo Station</p>
+                    <p class="time">1:30</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="timeline" style="flex-grow: 2;">
+                    <div class="dot"></div>
+                    <div class="line animate"></div>
+                    <img class="icon" src="../img/train-icon-30px.png" alt="Train Icon">
+                </div>
+                <div class="arrive" style="flex-grow: 2;">
+                    <p class="station">Alex Station</p>
+                    <p class="time">2:45</p>
+                    <p class="date">15/5/2021</p>
+                </div>
+                <div class="trip-book" style="flex-grow: 2;">
+                    <p class="price">25 EGP</p>
+                    <a href="TripBooking.html">Book</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-section">
+            <h2>Our Services</h2>
+            <a href="TripsList.html">Book a Ticket</a>
+            <a href="Account.html">My Bookings</a>
+            <a href="About.html">Our Policy</a>
+            <a href="About.html">About Us</a>
+        </div>
+        <div class="footer-section">
+            <h2 id="contact">Contact Us</h2>
+            <p>T.rain@email.com</p>
+            <p>+20 109 776 7657</p>
+            <div class="media">
+                <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">&copy Copyright 2021 | ❤️ BUE IP Project | Group 29</div>
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../includes/js/script-zeyad.js"></script> <!-- For NavBar -->
+    <script type="text/javascript" src="../includes/js/script-yousef-mohamed.js"></script>
+
+</body>
+
+</html>

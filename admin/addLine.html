@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-rain</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+
+    <!-- JS & JQuery Libraries -->
+    <script src="../includes/js/jquery-ui-1.12.1.custom/all.min.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/jquery.js"></script>
+    <script src="../includes/js/jquery-ui-1.12.1.custom/typed.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../includes/css/style.css">
+</head>
+
+<body>
+    <nav class="nav flex items-center">
+        <div class="logo px-20">
+            <a href="../index.html" class="flex flex-center">
+                <img src="../img/favicon.ico" alt="train logo" width="45">
+                <h1>T-rain</h1>
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="admin.html">Home</a></li>
+                <li><a href="adminBookTrip.html">Book Trip</a></li>
+                <li><a href="addLine.html">Lines</a></li>
+                <li><a href="#">Trips</a></li>
+                <li><a href="#">Trains</a></li>
+            </ul>
+        </div>
+        <div class="account flex items-center">
+            <a href="#">
+                <img src="../img/clipart3643767.png" alt="" width="50">
+            </a>
+            <div class="dropdown ml-10">
+                <a class="dropbtn flex items-center">username<i class="fas fa-sort-down ml-5"></i></a>
+                <div class="dropdown-content">
+                    <a href="../pages/Account.html">My Account</a>
+                    <a href="#">Log out</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav">
+            <a href="admin.html">Home</a>
+            <a href="adminBookTrip.html">Book Trip</a>
+            <a href="addLine.html">Lines</a>
+            <a href="#">Trips</a>
+            <a href="#">Trains</a>
+            <a href="../pages/Account.html">My Account</a>
+            <a href="#">Log out</a>
+        </div>
+        <a href="javascript: void(0)" class="burger-nav-ico">
+            <i class="fa fa-bars fa-2x"></i>
+        </a>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <header class="header after-nav">
+        <div class="landing container flex flex-center text-center">
+            <div class="search">
+                <form action="" method="post" class="search-form">
+                    <div class="search-form-container flex flex-center">
+                        <div class="input"><input type="text" id="from" placeholder="From" required>
+                            <div class="swap"></div>
+                        </div>
+                        <div class="input"><input type="text" id="to" placeholder="To" required></div>
+                        <div class="input btn"><button class="search-btn" type="submit"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                        <div class="input"><input class="search-btn" type="submit" value="Add line">
+                            <a href="javascript: void(0)" id="s-btn"><i class="fas fa-plus search-ico"></i></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        <!-- <img src="img/arrow.svg" alt=""> -->
+    </header>
+
+    <div class="footer">
+        <div class="footer-section">
+            <h2>Our Services</h2>
+            <a href="../pages/TripsList.html">Book a Ticket</a>
+            <a href="../pages/Account.html">My Bookings</a>
+            <a href="../pages/About.html">Our Policy</a>
+            <a href="../pages/About.html">About Us</a>
+        </div>
+        <div class="footer-section">
+            <h2 id="contact">Contact Us</h2>
+            <p>T.rain@email.com</p>
+            <p>+20 109 776 7657</p>
+            <div class="media">
+                <a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="instagram" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">&copy Copyright 2021 | ❤️ BUE IP Project | Group 29</div>
+
+    <div class="to-top"><i class="fas fa-chevron-circle-up to-top-ico"></i></div>
+
+    <!-- JS  -->
+    <script type="text/javascript" src="../includes/js/script-zeyad.js"></script>
+</body>
+
+</html>
